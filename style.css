@@ -11,7 +11,6 @@
     --transition-base: all 0.25s ease-in-out;
 }
 
-/* --- Base Form Resets --- */
 * {
     margin: 0;
     padding: 0;
@@ -27,10 +26,10 @@ html {
 
 body {
     line-height: 1.6;
-    padding-top: 70px; /* Offset to counter fixed navbar height safely */
+    padding-top: 70px;
 }
 
-/* --- Standard Layout Elements --- */
+/* --- Layout Elements --- */
 .section {
     padding: 90px 24px;
 }
@@ -61,7 +60,7 @@ body {
     text-align: center;
 }
 
-/* --- Interactive Core Buttons --- */
+/* --- Interactive Buttons --- */
 .btn {
     display: inline-block;
     padding: 12px 24px;
@@ -95,7 +94,7 @@ body {
     color: var(--white);
 }
 
-/* --- Fixed Navbar Components --- */
+/* --- Navbar Components --- */
 .navbar {
     position: fixed;
     top: 0;
@@ -161,7 +160,7 @@ body {
     transition: var(--transition-base);
 }
 
-/* --- Hero Section Design --- */
+/* --- Hero Section & Clean Frame --- */
 .hero-grid {
     display: grid;
     grid-template-columns: 1.1fr 0.9fr;
@@ -197,20 +196,17 @@ body {
     margin-bottom: 28px;
 }
 
-/* Profile Image Container with Hover Overlay State */
 .hero-image-wrapper {
     display: flex;
     justify-content: center;
 }
 
-.cert-link-wrapper {
-    position: relative;
-    display: block;
+.profile-frame {
     width: 100%;
     max-width: 310px;
     border-radius: 6px;
     overflow: hidden;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
     border: 1px solid var(--border-color);
 }
 
@@ -218,38 +214,6 @@ body {
     width: 100%;
     height: auto;
     display: block;
-}
-
-.img-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 102, 204, 0.92);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: var(--transition-base);
-    color: var(--white);
-    padding: 16px;
-}
-
-.img-overlay i {
-    font-size: 2.5rem;
-    margin-bottom: 12px;
-}
-
-.img-overlay span {
-    font-weight: 600;
-    font-size: 0.95rem;
-    letter-spacing: 0.5px;
-}
-
-.cert-link-wrapper:hover .img-overlay {
-    opacity: 1;
 }
 
 /* --- Modular Structural Cards --- */
@@ -330,7 +294,7 @@ body {
     font-size: 0.9rem;
 }
 
-/* --- Certificate Core Box --- */
+/* --- Certificate Frame & Link Styles Only Here --- */
 .cert-focus-box {
     max-width: 600px;
     margin: 0 auto;
@@ -340,110 +304,33 @@ body {
     border-radius: 6px;
 }
 
+.cert-image-link {
+    position: relative;
+    display: block;
+    width: 100%;
+    max-width: 380px;
+    margin: 0 auto 20px auto;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
 .cert-thumbnail {
     width: 100%;
-    max-width: 320px;
     height: auto;
-    border: 1px solid var(--border-color);
-    margin-bottom: 18px;
+    display: block;
+    transition: var(--transition-base);
 }
 
-.spacing-top {
-    margin-top: 20px;
-}
-
-/* --- Philosophy Block --- */
-.philosophy-quote {
-    font-size: 1.3rem;
-    font-style: italic;
-    color: var(--text-muted);
-    border-left: 4px solid var(--primary-color);
-    padding-left: 20px;
-    max-width: 800px;
-}
-
-/* --- Contact & Footer --- */
-.contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-}
-
-.meta-item {
-    margin-top: 16px;
-    display: flex;
-    align-items: center;
-}
-
-.meta-item i {
-    color: var(--primary-color);
-    margin-right: 12px;
-    font-size: 1.1rem;
-}
-
-.meta-item a {
-    color: var(--text-main);
-    text-decoration: none;
-}
-
-.meta-item a:hover {
-    text-decoration: underline;
-}
-
-input, textarea {
+.cert-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    padding: 12px;
-    margin-bottom: 14px;
-    border: 1px solid var(--border-color);
-    border-radius: 4px;
-    font-family: inherit;
-    font-size: 0.95rem;
-}
-
-footer {
-    background-color: var(--dark-neutral);
-    color: #888888;
-    text-align: center;
-    padding: 24px;
-    font-size: 0.85rem;
-    border-top: 1px solid #222222;
-}
-
-/* --- Media Breakpoint Settings --- */
-@media (max-width: 840px) {
-    .hero-grid, .contact-grid {
-        grid-template-columns: 1fr;
-    }
-    .hero-image-wrapper {
-        order: -1;
-    }
-    .hero-text h1 {
-        font-size: 2.2rem;
-    }
-    .menu-toggle {
-        display: flex;
-    }
-    .nav-links {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: var(--white);
-        flex-direction: column;
-        padding: 20px 0;
-        border-bottom: 1px solid var(--border-color);
-        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }
-    .nav-links.active {
-        display: flex;
-    }
-    .nav-links li {
-        margin: 10px 0;
-        text-align: center;
-    }
-    .nav-links li a {
-        margin-left: 0;
-        font-size: 1rem;
-    }
-}
+    height: 100%;
+    background-color: rgba(0, 102, 204, 0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    Normally I can help with things like this, but I don't seem to have access to that content. You can try again or ask me for something else.
